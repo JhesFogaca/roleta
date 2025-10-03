@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <title>Roleta de Prêmios - Ótica</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css" />
+
+
+    <!-- GSAP -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+
+
+</head>
+
+<body>
+    <main class="app">
+        <section class="stage">
+            <!-- Roleta -->
+            <div class="wheel" id="wheel">
+                <canvas id="wheelCanvas" width="900" height="900" aria-label="Roleta de prêmios"></canvas>
+                <!-- Ponteiro fixo -->
+                <div class="pointer" aria-hidden="true"></div>
+            </div>
+        </section>
+        
+        <div class="pont"></div>
+        <!-- Alavanca -->
+        <div class="lever" id="lever">
+            <div class="lever__bar">
+                <div class="lever__knob" id="leverKnob" role="button" aria-label="Puxar alavanca"></div>
+                <div class="lever__levels">
+                    <div class="lever__fill" id="leverFill"></div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Pedestal + Logo (substitua assets/logo.png) 
+        <div class="pedestal">
+            
+            <img class="logo" src="./assets/logo.png" alt="Logo da Ótica" />
+                <div class="result" id="result">Puxe a alavanca para jogar</div>
+        </div>-->
+
+        
+    </main>
+
+
+    <!-- Sons (troque os arquivos em /assets) -->
+    <audio id="sndLever" src="./assets/lever.mp3" preload="auto"></audio>
+    <audio id="sndTick" src="./assets/tick.mp3" preload="auto"></audio>
+    <audio id="sndWin" src="./assets/win.mp3" preload="auto"></audio>
+
+    <script type="module" src="./js/wheel.js"></script>
+    <script type="module" src="./js/lever.js"></script>
+    <script type="module" src="./js/game.js"></script>
+
+</body>
+
+</html>
